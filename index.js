@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('./config/connection');
 const routes = require('./routes');
+const listEndpoints = require('express-list-endpoints');
 
 const cwd = process.cwd();
 
@@ -15,7 +16,7 @@ const activity = cwd.includes('Social_Network')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
-
+console.log(listEndpoints(app))
 db.once('open', () => {
   app.listen(PORT, () => {
     console.log(`API server for ${activity} running on port ${PORT}!`);

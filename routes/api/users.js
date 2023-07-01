@@ -8,7 +8,7 @@ const {
   deleteUser,
   addFriendToUser,
   deleteFriendFromUser,
-} = require('../controllers/user-controller');
+} = require('../../controllers/userController');
 
 router
   .route('/')

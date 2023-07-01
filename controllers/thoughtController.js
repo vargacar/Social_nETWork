@@ -102,13 +102,13 @@ const thoughtController = {
 
   async createReaction(req, res) {
     try {
-      const thoughtToReactTo = await Thought.findOne({ _id: req.params.id});
+      const thoughtToReactTo = await Thought.findOneAndUpdate({ _id: req.params.id},{$addToSet:{reactions:req.body}},{runValidators:true,new:true});
       if (!thoughtToReactTo) {
         res.status(404).json({
           message: 'Thought not found.',
         })
       }
-      thoughtToReactTo.reactions.push(req.body);
+      // thoughtToReactTo.reactions.push(req.body);
       res.json(thoughtToReactTo);
 
     } catch (err) {
@@ -119,7 +119,7 @@ const thoughtController = {
 
   async deleteReaction(req, res) {
     try {
-      const thoughtToRemoveReactionFrom = await Thought.findOne({ _id: req.params.id});
+      const thoughtToRemoveReactionFrom = await Thought.findOneAndUpdate({ _id: req.params.id});
       if (!thoughtToReactTo) {
         res.status(404).json({
           message: 'Thought not found.',
