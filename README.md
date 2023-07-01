@@ -18,4 +18,6 @@ Built With
 
 dotenv: 16.3.1, express: 4.18.2, express-list-endpoints: 6.0.0 mongoose: 7.3.1
 
-Deployed Application Link: GitHub Repository: 
+Deployed Application Link: https://vargacar.github.io/Social_nETWork/
+ GitHub Repository: https://github.com/vargacar/Social_nETWork
+ video from Screencastify: https://watch.screencastify.com/v/maP25fYbTaSvqtFkpVMP
